@@ -26,10 +26,17 @@ async function main() {
     headers['session'] = JSON.stringify(session);
     infoLog('session情報: ' + JSON.stringify(session));
 
+    // book作成最大数
+    const maxCount = config['bookCreateMaxCount'] ? config['bookCreateMaxCount'] : 1000;
+    // 前回作成した日から遡る日数
+    const dayBack = config['dayBackFromLastCreate'] ? config['dayBackFromLastCreate'] : 1;
+
+    const url = config['bookOperateService']['postUserBatch'] + '%3FmaxCount%3D' + maxCount + '%26dayBack%3D' + dayBack;
+
     // 利用者作成(バッチ)
     const postUserBatchBody = {};
     const postUserBatchOptions = {
-        url: config['bookOperateService']['postUserBatch'],
+        url: url,
         method: 'POST',
         headers: headers,
         json: postUserBatchBody
