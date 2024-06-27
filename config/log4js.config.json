@@ -1,0 +1,33 @@
+{
+  "appenders": {
+    "ConsoleLogAppender": {
+      "type": "console"
+    },
+    "ApplicationLogAppender": {
+      "type": "dateFile",
+      "filename": "./efs/application000001/create-user-batch/application.log",
+      "pattern": ".yyyy-MM-dd",
+      "numBackups": 30,
+      "alwaysIncludePattern": false,
+      "layout": {
+        "type": "pattern",
+        "pattern": "[%d{yyyy-MM-dd hh:mm:ss.SSS}] [%p] %m"
+      }
+    }
+  },
+  "replaceConsole": true,
+  "categories": {
+    "default": {
+      "appenders": [
+        "ConsoleLogAppender"
+      ],
+      "level": "info"
+    },
+    "application": {
+      "appenders": [
+        "ApplicationLogAppender"
+      ],
+      "level": "info"
+    }
+  }
+}

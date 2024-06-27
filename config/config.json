@@ -1,0 +1,29 @@
+{
+  "bookOperateService": {
+    "postUserBatch": "http://application000001-service/pxr-block-proxy/pxr-block-proxy/?from_path=%2Fbook-operate&block=1000407&path=%2Fbook-operate%2Fuser%2Fbatch"
+  },
+  "bookCreateMaxCount": 30,
+  "dayBackFromLastCreate": 1,
+  "session": {
+    "loginId": "application000001_batch",
+    "auth": {
+      "member": {
+        "add": true,
+        "update": true,
+        "delete": true
+      },
+      "app-wf-user": {
+        "create": true
+      }
+    },
+    "block": {
+      "_value": 1000407,
+      "_ver": 1
+    },
+    "actor": {
+      "_value": 1000789,
+      "_ver": 1
+    }
+  },
+  "timezone": "Asia/Tokyo"
+}
